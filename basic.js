@@ -1,2 +1,2 @@
-let number =33
+let number ="atrij"
 console.log(number)

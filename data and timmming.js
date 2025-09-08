@@ -39,7 +39,7 @@ console.log(newDate);
 console.log(newDate.getMonth() + 1);
 
 // Get day of week (0 = Sunday, 6 = Saturday)
-console.log(newDate.getDay());
+console.log(newDate.getDay()) ;
 
 
 // Print weekday in words (like "Monday")

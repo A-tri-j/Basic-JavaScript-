@@ -48,3 +48,49 @@ console.log("B   " + myArr)      // Still original: [0,4,5,8,10,6]
 const myarrr = myArr.splice(1, 3)
 console.log(myarrr)              // [4,5,8] (removed elements)
 console.log("C   " + myArr)      // Modified array: [0,10,6]
+
+
+
+// Array of Marvel heroes
+const marvel_heros = ["thor", "ironman", "spiderman"];
+
+// Array of DC heroes
+const dc = ["superman", "flash", "batman"];
+
+// ❌ If we use push, it will insert the entire 'dc' array as a single element
+marvel_heros.push(dc);
+console.log("After push:", marvel_heros);
+// Output: ["thor","ironman","spiderman",["superman","flash","batman"]]
+
+// ✅ concat() merges two arrays into a NEW array (does not change original)
+const allHeros = marvel_heros.concat(dc);
+console.log("Using concat:", allHeros);
+// Output: ["thor","ironman","spiderman",["superman","flash","batman"],"superman","flash","batman"]
+
+// ✅ Spread operator (...) is a cleaner modern way to merge arrays
+const all_new_heros = [...marvel_heros, ...dc];
+console.log("Using spread:", all_new_heros);
+// Output: ["thor","ironman","spiderman",["superman","flash","batman"],"superman","flash","batman"]
+
+// Nested array (multi-level array)
+const real_another_array = [1, 2, 3, 4, [5, 6, 7], 8, 6, [11, 12, [15, 16]]];
+console.log("Nested array:", real_another_array);
+// Output: [1,2,3,4,[5,6,7],8,6,[11,12,[15,16]]]
+
+// ✅ flat() method flattens nested arrays
+console.log("Flattened array:", real_another_array.flat(Infinity));
+// Output: [1,2,3,4,5,6,7,8,6,11,12,15,16]
+
+// ✅ Array.isArray() checks if given value is an array
+console.log(Array.isArray("Atrij"));   // false (because "Atrij" is a string)
+
+// ✅ Array.from() converts iterable/string into array
+console.log(Array.from("Atrij"));      // ['A','t','r','i','j']
+
+// ⚠️ Passing object directly -> returns empty [] because object is not iterable
+console.log(Array.from({name: "Atrij"})); // []
+
+// ✅ Array.of() creates array from individual values
+let score1 = 100, score2 = 200, score3 = 300;
+console.log(Array.of(score1, score2, score3)); 
+// Output: [100,200,300]

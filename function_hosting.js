@@ -16,3 +16,19 @@ const addtwo = function(num) {
 }
 
 console.log(addtwo(5))   // Output: 7
+
+
+
+
+// Arrow function
+
+// Function with explicit return
+const addtwonumber = (num1, num2) => {
+    return num1 + num2;
+}
+
+// Function with implicit return (shorter syntax)
+const addnumber = (num1, num2) => num1 + num2;
+
+// Calling the first function
+console.log(addtwonumber(5, 3)) // → 8
